@@ -2,3 +2,4 @@ node_modules
 assets
 about/ignore
 .idea
+*.html

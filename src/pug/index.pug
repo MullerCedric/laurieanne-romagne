@@ -1,0 +1,78 @@
+doctype html
+html( lang="fr" )
+    head
+        title Accueil | Laurie-Anne Romagne Photographie
+        include includes/_head.pug
+
+    body( id="top" )
+        header
+
+            div( role="banner" )
+                h1( role="heading" aria-level="1" ) Photographie créative
+
+            include includes/_nav.pug
+
+        main
+            section
+                h2( role="heading" aria-level="2" ) Mes travaux
+                section
+                    h3( role="heading" aria-level="3" ) Professionnels
+                    p Mauris ut nisi lobortis, dictum risus id, sollicitudin lectus. Nullam vitae magna
+                    p
+                        a( href="#" title="Vers la page Professionnels" ) > Parcourir
+                section
+                    h3( role="heading" aria-level="3" ) Particuliers
+                    p Ed luctus et purus vitae hendrerit. Nunc varius est justo, quis convallis nulla commodo sagittis. Nunc gravida elementum
+                    p
+                        a( href="#" title="Vers la page Particuliers" ) > Découvrir
+                section
+                    h3( role="heading" aria-level="3" ) Artistique
+                    p Proin non ligula id leo euismod elementum scelerisque ut lorem. Augue molestie ultrices varius, sed molestie dolor dui in dolor
+                    p
+                        a( href="#" title="Vers la page Artistique" ) > Explorer
+
+            section
+                h2( role="heading" aria-level="2" ) L'actualité du moment
+                article
+                    h3( role="heading" aria-level="3" ) Résidence à Berlin
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum facilsis ligula, sed accumsan nisl imperiet sit amet. Fusce semper venenatis. Aliquam sit amet velit nec risus pretium maximus.
+                article
+                    h3( role="heading" aria-level="3" ) Expo à Bruxelles
+                    p Vestibulum ac erat sit amet augue tincidunt pretium. Vivamus ut eros eu turpis suscipit commodo. Nulla vehicula lorem felis, a accumsan ex pellentesque sit amet. Duis nec quam nulla. Mauris nunc est.
+                div
+                    a( href="#" title="Vers la page Expos" ) Retrouver les dates importantes
+
+            section
+                h2( role="heading" aria-level="2" ) Laurie-Anne Romagne
+                section
+                    h3( role="heading" aria-level="3" ) À propos de moi...
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                    div
+                        a( href="#" title="Vers la page Expos" ) Travailler avec moi
+                aside
+                    h3( class="hidden" role="heading" aria-level="3" ) Plus me concernant
+                    p
+                        q Lorem ipsum dolor sit amet
+
+            section
+                h2( role="heading" aria-level="2" ) Retrouvez-moi sur Instagram
+                ul
+                    li
+                    li
+                    li
+                    li
+                section
+                    h3( role="heading" aria-level="3" ) laurieanneromagnephotographie
+                    p 46 publications, 85 abonnés
+                    p <strong>Laurie-Anne Romagne</strong> Photographe
+                    p www.facebook.com/laurieanneromagnephotographie
+                    p
+                        a( href="#" title="Vers ma page instagram" ) S’abonner
+                ul
+                    li
+                    li
+                    li
+                    li
+
+
+        include includes/_footer.pug
