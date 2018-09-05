@@ -17,7 +17,9 @@ html( lang="fr" )
                 div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
                     section( class="o-grid__cell c-cat" )
                         div
-                            img( src="./assets/images/thumb-professionnels.jpg" srcset="./assets/images/thumb-professionnels.jpg 337w, ./assets/images/thumb-professionnels-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo faite pour la société Infrabel représentant un wagon et le texte 'safety first'" class="c-cat__banner" )
+                            picture
+                                source( media="(min-width: 651px)" srcset="./assets/images/thumb-professionnels.jpg" )
+                                img( src="./assets/images/thumb-professionnels-sm.jpg" alt="Photo faite pour la société Infrabel représentant un wagon et le texte 'safety first'" class="c-cat__banner" )
                         div( class="c-cat__content" )
                             h3 Professionnels
                             p Mauris ut nisi lobortis, dictum risus id, sollicitudin lectus. Nullam vitae magna
@@ -26,7 +28,9 @@ html( lang="fr" )
                 div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
                     section( class="o-grid__cell c-cat" )
                         div
-                            img( src="./assets/images/thumb-particuliers.jpg" srcset="./assets/images/thumb-particuliers.jpg 337w, ./assets/images/thumb-particuliers-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo représentant deu enfants sur un fauteuil blanc" class="c-cat__banner" )
+                            picture
+                                source( media="(min-width: 651px)" srcset="./assets/images/thumb-particuliers.jpg" )
+                                img( src="./assets/images/thumb-particuliers-sm.jpg" alt="Photo représentant deu enfants sur un fauteuil blanc" class="c-cat__banner" )
                         div( class="c-cat__content" )
                             h3 Particuliers
                             p Ed luctus et purus vitae hendrerit. Nunc varius est justo, quis convallis nulla commodo sagittis. Nunc gravida elementum
@@ -35,7 +39,9 @@ html( lang="fr" )
                 div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
                     section( class="o-grid__cell c-cat" )
                         div
-                            img( src="./assets/images/thumb-artistique.jpg" srcset="./assets/images/thumb-artistique.jpg 337w, ./assets/images/thumb-artistique-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo d'une main mi-close touchant le sol" class="c-cat__banner" )
+                            picture
+                                source( media="(min-width: 651px)" srcset="./assets/images/thumb-artistique.jpg" )
+                                img( src="./assets/images/thumb-artistique-sm.jpg" alt="Photo d'une main mi-close touchant le sol" class="c-cat__banner" )
                         div( class="c-cat__content" )
                             h3 Artistique
                             p Proin non ligula id leo euismod elementum scelerisque ut lorem. Augue molestie ultrices varius, sed molestie dolor dui in dolor

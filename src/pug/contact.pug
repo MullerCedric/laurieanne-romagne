@@ -14,7 +14,9 @@ html( lang="fr" )
                 div( class="o-grid__col gd-6/18 gd-8/18@phablet gd-18/18@mobile o-grid__col--streched" )
                     aside( class="o-grid__cell c-info" )
                         div
-                            img( src="./assets/images/banner-contact.jpg" srcset="./assets/images/banner-contact.jpg 337w, ./assets/images/banner-contact-sm.jpg 600w" sizes="(max-width: 650px) 600px, (min-width: 651px) 337px" alt="Photo d'une étendue d'eau bleu" class="c-info__banner" )
+                            picture
+                                source( media="(min-width: 651px)" srcset="./assets/images/banner-contact.jpg" )
+                                img( src="./assets/images/banner-contact-sm.jpg" alt="Photo d'une étendue d'eau bleu" class="c-info__banner" )
                         div( class="c-info__pic" )
                             img( src="./assets/images/la-romagne-contact.jpg" alt="Photo d'une étendue d'eau bleu" )
                         div( class="c-info__content" )

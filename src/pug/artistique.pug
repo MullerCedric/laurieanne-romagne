@@ -21,7 +21,9 @@ html( lang="fr" )
                         li( class="o-grid__col gd-6/18 gd-9/18@mobile gd-18/18@thumb c-project" )
                             a( href="./details-projet.html" title="Voir les détails de ce projet" )
                                 figure( class="o-grid__cell c-project__item" )
-                                    img( src='./assets/images/thumb-art-art' + (index + 1) + '.jpg' srcset='./assets/images/thumb-art-art' + (index + 1) + '.jpg 336w, ./assets/images/thumb-art-art' + (index + 1) + '-sm.jpg 377w' sizes="(max-width: 375px) 377px, (min-width: 376px) 336px" alt="Photo représentant le projet" )
+                                    picture
+                                        source( media="(min-width: 376px)" srcset='./assets/images/thumb-art-art' + (index + 1) + '.jpg' )
+                                        img( src='./assets/images/thumb-art-art' + (index + 1) + '-sm.jpg' alt="Photo représentant le projet" )
                                     figcaption( class="c-project__content" ) #{val}
 
                 div( class="c-cta" )
