@@ -1,0 +1,130 @@
+$thick: 2px;
+$pad: .25em;
+$extra: $pad * 1.8;
+$duration: .6s;
+
+.c-cta {
+  text-align: center;
+  margin-top: .75em;
+  & ~ .c-cta {
+    margin-top: .55em;
+  }
+  &__link:before {
+    content: "> ";
+    display: inline;
+  }
+
+  &__button {
+    padding: $pad $extra;
+    margin: .35em auto .25em;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+
+    .text {
+      display: block;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -$thick;
+      left: $extra;
+      right: $extra;
+      height: $thick;
+      background: $lightPrimary;
+      transition: transform $duration cubic-bezier(1, 0, .37, 1) ( $duration / 4 ),
+      right ( $duration / 4 ) cubic-bezier(.04, .48, 0, 1) ( $duration / 4 * 3 ),
+      left ( $duration / 2 ) cubic-bezier(.04, .48, 0, 1) ( $duration / 4 * 3 );
+      transform-origin: left;
+    }
+
+    .line {
+      position: absolute;
+      background: $primary;
+
+      &.-right,
+      &.-left {
+        width: $thick;
+        bottom: -$thick;
+        top: -$thick;
+        transform: scale3d(1, 0, 1);
+      }
+
+      &.-top,
+      &.-bottom {
+        height: $thick;
+        left: -$thick;
+        right: -$thick;
+        transform: scale3d(0, 1, 1);
+      }
+
+      &.-right {
+        right: -$thick;
+        transition: transform ( $duration / 8 ) cubic-bezier(1, 0, .65, 1.01) ( $duration / 3.478260869565217391304347826087 );
+        transform-origin: top;
+      }
+
+      &.-top {
+        top: -$thick;
+        transition: transform ( $duration / 10 ) linear ( $duration / 1.8604651162790697674418604651163 );
+        transform-origin: left;
+      }
+
+      &.-left {
+        left: -$thick;
+        transition: transform ( $duration / 10 ) linear ( $duration / 1.5686274509803921568627450980392 );
+        transform-origin: bottom;
+      }
+
+      &.-bottom {
+        bottom: -$thick;
+        transition: transform ( $duration / 2.6666666666666666666666666666667 ) cubic-bezier(1, 0, .65, 1.01);
+        transform-origin: right;
+      }
+    }
+
+    &:hover,
+    &:active, &:focus {
+      text-decoration: none;
+      &:after {
+        transform: scale3d(0, 1, 1);
+        right: -$thick;
+        left: -$thick;
+        transform-origin: right;
+        transition: transform ( $duration / 4 ) cubic-bezier(1, 0, .65, 1.01) ( $duration / 4.7058823529411764705882352941176 ),
+        right ( $duration / 4 ) cubic-bezier(1, 0, .65, 1.01),
+        left 0s ( $duration / 2.6666666666666666666666666666667 );
+      }
+
+      .line {
+        transform: scale3d(1, 1, 1);
+
+        &.-right {
+          transition: transform ( $duration / 8 ) cubic-bezier(1, 0, .65, 1.01) ( $duration / 4 );
+          transform-origin: bottom;
+        }
+
+        &.-top {
+          transition: transform ( $duration / 10 ) linear ( $duration / 2 );
+          transform-origin: right;
+        }
+
+        &.-left {
+          transition: transform ( $duration / 10 ) linear ( $duration / 1.6666666666666666666666666666667 );
+          transform-origin: top;
+        }
+
+        &.-bottom {
+          transition: transform ( $duration / 1.6 ) cubic-bezier(0, .53, .29, 1) ( $duration / 1.4285714285714285714285714285714 );
+          transform-origin: left;
+        }
+      }
+
+    }
+
+  }
+}

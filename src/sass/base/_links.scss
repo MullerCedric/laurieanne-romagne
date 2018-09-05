@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+  color: $primary;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: $secondary;
+  }
+}

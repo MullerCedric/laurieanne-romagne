@@ -1,0 +1,62 @@
+.c-form {
+  position: sticky;
+  top: 6.8em;
+  margin-bottom: 6em;
+  label {
+    display: block;
+    margin-bottom: .5em;
+  }
+  &__input {
+    width: 100%;
+    padding: .7em .5em;
+    margin-bottom: 1.25em;
+    border: 1px solid $lightPrimary;
+    &:focus {
+      border: 1px solid $secondary;
+    }
+    &--error {
+      border: 1px solid red;
+    }
+  }
+  &__error {
+    padding: .7em .5em;
+    background-color: rgb(255,200,200);
+    display: none;
+    margin-bottom: 1.75em;
+    position: relative;
+    &:after {
+      border: 5px solid rgb(255,200,200);
+      content: "";
+      position: absolute;
+      left: 10%;
+      top: -5px;
+      transform: rotate(45deg);
+    }
+    &--visible {
+      display: block;
+    }
+  }
+  &__sent {
+    display: none;
+    padding: .7em .5em;
+    margin-bottom: 1.75em;
+    position: sticky;
+    background-color: rgb(200,255,200);
+    &--visible {
+      display: block;
+    }
+  }
+  &__message {
+    height: 15em;
+    margin-bottom: 0;
+  }
+  & .c-cta__button {
+    margin-bottom: 0;
+  }
+  &--hide {
+    display: none;
+  }
+}
+textarea + .c-form__error {
+  margin-top: 1.25em;
+}

@@ -1,0 +1,10 @@
+.c-gallery {
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+  &__img {
+    margin-right: .8em;
+    margin-bottom: .75em;
+  }
+}

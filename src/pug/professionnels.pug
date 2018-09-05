@@ -1,68 +1,53 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Professionnels | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Professionnels")
 
-    body( id="top" )
-        header
+    body( id="top" class="nojs" )
+        header( class="o-wrapper c-header" )
+            div( role="banner" class="c-banner c-banner--professionnels" )
+                h1 Professionnels
+                p( class="c-banner__subtitle" ) Ut sodales nulla vel gravida lacinia. Cras in neque vitae arcu tincidunt port titor quis tellus. Phasellus a scelerisque lectus. Vestibulum rutrum, tellblus et eleifend dapibus, nisi mi mauris, id facilisis erat enim id ante.
 
-            div( role="banner" )
-                h1( role="heading" aria-level="1" ) Professionnels
-                p Ut sodales nulla vel gravida lacinia. Cras in neque vitae arcu tincidunt port titor quis tellus. Phasellus a scelerisque lectus. Vestibulum rutrum, tellblus et eleifend dapibus, nisi mi mauris, id facilisis erat enim id ante.
-
-            include includes/_nav.pug
+            +mainNav("professionnels")
 
 
-        main
+        main( class="o-wrapper" id="content" )
             section
-                h2( role="heading" aria-level="2" ) Mes projets professionnels
-                ul
-                    li
-                        a( href="#" title="Afficher tous les projets professionnels" ) Tous
-                    li
-                        a( href="#" title="N'afficher que les projets faits pour des entreprises" ) Entreprises
-                    li
-                        a( href="#" title="N'afficher que les projets culutrels" ) Culturels
-                    li
-                        a( href="#" title="N'afficher que les projets \"reportages\"" ) Reportages
-                    li
-                        a( href="#" title="N'afficher que les projets \"studio/graphisme\"" ) Studio/graphisme
+                h2 Mes projets professionnels
+                div( id="f-btn-containe" )
+                    button( class="c-project__filter c-project__filter--active" onclick="filterSelection('all')" ) Tous
+                    button( class="c-project__filter" onClick="filterSelection('companies')" ) Entreprises
+                    button( class="c-project__filter" onClick="filterSelection('cultural')" ) Culturels
+                    button( class="c-project__filter" onClick="filterSelection('reports')" ) Reportages
+                    button( class="c-project__filter" onClick="filterSelection('studio')" ) Studio/graphisme
 
-                ul
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Infrabel / SNCB
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Dernier jardin
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Loft capucines
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Tous en campagne
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Chroniques d’un quartier
+                ul( class="o-grid f-container" )
+                    - var projects = [{'name':'Infrabel / SNCB', 'tag':'companies'}, {'name':'Dernier jardin', 'tag':'cultural reports'}, {'name':'Loft capucines', 'tag':'companies'}, {'name':'Tous en campagne', 'tag':'studio'}, {'name':'Chroniques d’un quartier', 'tag':'cultural reports'}]
+                    each project, index in projects
+                        li( class='o-grid__col gd-6/18 gd-9/18@mobile gd-18/18@thumb c-project ' + project.tag )
+                            a( href="./details-projet.html" title="Voir les détails de ce projet" )
+                                figure( class="o-grid__cell c-project__item" )
+                                    img( src='./assets/images/thumb-pro-art' + (index + 1) + '.jpg' srcset='./assets/images/thumb-pro-art' + (index + 1) + '.jpg 336w, ./assets/images/thumb-pro-art' + (index + 1) + '-sm.jpg 377w' sizes="(max-width: 375px) 377px, (min-width: 376px) 336px" alt="Photo représentant le projet" )
+                                    figcaption( class="c-project__content" ) #{project.name}
 
-                div
-                    a( href="#" title="Vers la page de contact" ) Collaborer avec moi
+                div( class="c-cta" )
+                    a( href="./contact.html" title="Vers la page de contact" class="c-cta__button" )
+                        span( class="text" ) Collaborer avec moi
+                        span( class="line -right" )
+                        span( class="line -top" )
+                        span( class="line -left" )
+                        span( class="line -bottom" )
 
             section
-                h2( role="heading" aria-level="2" ) Ils m’ont fait confiance
+                h2 Ils m’ont fait confiance
                 ul
-                    li
+                    li( class="c-partner" )
+                        img( src="./assets/images/partenaire1.jpg" alt="Logo du partenaire" )
+                    li( class="c-partner" )
+                        img( src="./assets/images/partenaire1.jpg" alt="Logo du partenaire" )
+                    li( class="c-partner" )
+                        img( src="./assets/images/partenaire1.jpg" alt="Logo du partenaire" )
 
-                    li
 
-                    li
-
-
-
-        include includes/_footer.pug
+        +footer

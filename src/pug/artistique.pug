@@ -1,68 +1,36 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Artistique | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Artistique")
 
-    body( id="top" )
-        header
-
-            div( role="banner" )
-                h1( role="heading" aria-level="1" ) Artistique
+    body( id="top" class="nojs" )
+        header( class="o-wrapper c-header" )
+            div( role="banner" class="c-banner c-banner--artistique" )
+                h1 Artistique
                 p Ut sodales nulla vel gravida lacinia. Cras in neque vitae arcu tincidunt port titor quis tellus. Phasellus a scelerisque lectus. Vestibulum rutrum, tellblus et eleifend dapibus, nisi mi mauris, id facilisis erat enim id ante.
 
-            include includes/_nav.pug
+            +mainNav("artistique")
 
 
-        main
+        main( class="o-wrapper" id="content" )
             section
-                h2( role="heading" aria-level="2" ) Mes projets artistiques
+                h2 Mes projets artistiques
 
-                ul
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Reverzhi
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Deep
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Errance
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption MUE
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption La Cigogne
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Goldroom
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption 日本
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Bretagne contraire
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Huahine – La vie locale
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Gommes Bichromatées
+                ul( class="o-grid" )
+                    each val, index in ['Reverzhi', 'Deep', 'Errance', 'MUE', 'La Cigogne', 'Goldroom', '日本', 'Bretagne contraire', 'Huahine – La vie locale', 'Gommes Bichromatées']
+                        li( class="o-grid__col gd-6/18 gd-9/18@mobile gd-18/18@thumb c-project" )
+                            a( href="./details-projet.html" title="Voir les détails de ce projet" )
+                                figure( class="o-grid__cell c-project__item" )
+                                    img( src='./assets/images/thumb-art-art' + (index + 1) + '.jpg' srcset='./assets/images/thumb-art-art' + (index + 1) + '.jpg 336w, ./assets/images/thumb-art-art' + (index + 1) + '-sm.jpg 377w' sizes="(max-width: 375px) 377px, (min-width: 376px) 336px" alt="Photo représentant le projet" )
+                                    figcaption( class="c-project__content" ) #{val}
 
-                div
-                    a( href="#" title="Vers la page Expos" ) Voir les prochaines dates de mes expositions
+                div( class="c-cta" )
+                    a( href="./expos.html" title="Vers la page Expos" class="c-cta__button" )
+                        span( class="text" ) Voir les prochaines dates de mes expositions
+                        span( class="line -right" )
+                        span( class="line -top" )
+                        span( class="line -left" )
+                        span( class="line -bottom" )
 
 
-
-        include includes/_footer.pug
+        +footer

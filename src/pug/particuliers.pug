@@ -1,45 +1,64 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Particuliers | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Particuliers")
 
-    body( id="top" )
-        header
-
-            div( role="banner" )
+    body( id="top" class="nojs" )
+        header( class="o-wrapper" )
+            div( role="banner" class="c-header c-header--video" )
                 h1( class="hidden" ) Particuliers
-                div( class="videoWrapper" )
-                    iframe(
-                        width="1056" height="594"
-                        src="https://www.youtube.com/embed/appQmNNTC90?rel=0&showinfo=0"
-                        allowfullscreen )
+                iframe(
+                    class="c-header__video"
+                    width="1057" height="590"
+                    src="https://www.youtube.com/embed/appQmNNTC90?rel=0&showinfo=0"
+                    allowfullscreen )
 
-            include includes/_nav.pug
-
-
-        main
-            section
-                figure
-                div
-                    h2 Mariage
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
-                    div
-                        a( href="#" title="Voir plus d'informations sur cette catégorie" ) En savoir plus
-            section
-                div
-                    h2 Portrait
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
-                figure
-                div
-                    a( href="#" title="Voir plus d'informations sur cette catégorie" ) En savoir plus
-            section
-                figure
-                div
-                    h2 Grossesse et naissance
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
-                    div
-                        a( href="#" title="Voir plus d'informations sur cette catégorie" ) En savoir plus
+            +mainNav("particuliers")
 
 
-        include includes/_footer.pug
+        main( class="o-wrapper" id="content" )
+            section( class="o-grid o-grid--no-gutter" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet" )
+                    img( src="./assets/images/mariage.jpg" srcset="./assets/images/mariage.jpg 528w, ./assets/images/mariage-sm.jpg 750w" sizes="(max-width: 775px) 750px, (min-width: 776px) 528px" alt="Photo représentant la catégorie" class="c-subcat__image" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet o-grid__col--streched c-subcat" )
+                    div( class="o-grid__cell o-grid__cell--v-centered c-subcat__content" )
+                        h2 Mariage
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                        div( class="c-cta" )
+                            a( href="./details-categorie.html" title="Voir plus d'informations sur cette catégorie" class="c-cta__button" )
+                                span( class="text" ) En savoir plus
+                                span( class="line -right" )
+                                span( class="line -top" )
+                                span( class="line -left" )
+                                span( class="line -bottom" )
+            section( class="o-grid o-grid--no-gutter" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet o-grid__col--streched c-subcat" )
+                    div( class="o-grid__cell o-grid__cell--v-centered c-subcat__content" )
+                        h2 Portrait
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                        div( class="c-cta" )
+                            a( href="./details-categorie.html" title="Voir plus d'informations sur cette catégorie" class="c-cta__button" )
+                                span( class="text" ) En savoir plus
+                                span( class="line -right" )
+                                span( class="line -top" )
+                                span( class="line -left" )
+                                span( class="line -bottom" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet" )
+                    img( src="./assets/images/portraits.jpg" srcset="./assets/images/portraits.jpg 528w, ./assets/images/portraits-sm.jpg 750w" sizes="(max-width: 775px) 750px, (min-width: 776px) 528px" alt="Photo représentant la catégorie" class="c-subcat__image" )
+            section( class="o-grid o-grid--no-gutter" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet" )
+                    img( src="./assets/images/grossesses.jpg" srcset="./assets/images/grossesses.jpg 528w, ./assets/images/grossesses-sm.jpg 750w" sizes="(max-width: 775px) 750px, (min-width: 776px) 528px" alt="Photo représentant la catégorie" class="c-subcat__image" )
+                div( class="o-grid__col gd-9/18 gd-18/18@tablet o-grid__col--streched c-subcat" )
+                    div( class="o-grid__cell o-grid__cell--v-centered c-subcat__content" )
+                        h2 Grossesse et naissance
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                        div( class="c-cta" )
+                            a( href="./details-categorie.html" title="Voir plus d'informations sur cette catégorie" class="c-cta__button" )
+                                span( class="text" ) En savoir plus
+                                span( class="line -right" )
+                                span( class="line -top" )
+                                span( class="line -left" )
+                                span( class="line -bottom" )
+
+
+        +footer

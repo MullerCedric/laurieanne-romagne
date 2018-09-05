@@ -1,0 +1,35 @@
+*, body {
+  font-size: 16px;
+}
+
+small, .c-headerNav a, .c-footer a {
+  font-size: 0.775em;
+}
+.c-about__aside, .c-expo__time {
+  font-size: 1.3em;
+}
+.c-banner__subtitle, .c-about__subtitle {
+  font-size: 1.6em;
+  font-weight: 300;
+}
+h3, dt, .c-cta__button {
+  font-size: 1.6em;
+}
+h2 {
+  font-size: 2em;
+}
+h1 {
+  font-size: 3.6em;
+}
+
+@media all and (max-width: $mobile) {
+  h1 {
+    font-size: 2.7em;
+  }
+  h2 {
+    font-size: 1.85em;
+  }
+  h3, dt, .c-cta__button, .c-banner__subtitle, .c-about__subtitle {
+    font-size: 1.45em;
+  }
+}

@@ -1,0 +1,36 @@
+.c-project {
+  display: none;
+  &--visible {
+    display: block;
+  }
+  margin-bottom: 2.5em;
+  &__item {
+    background-color: $white;
+  }
+  &__filter {
+    display: inline-block;
+    padding: .5em 1em;
+    background-color: $white;
+    border: 1px solid $lightPrimary;
+    margin-right: 1.5em;
+    margin-bottom: 2em;
+    &:hover {
+      border: 1px solid $secondary;
+    }
+    &--active {
+      background-color: $primary;
+      color: $white;
+      border-color: $lightPrimary;
+    }
+  }
+  &__content {
+    padding: .35em 1em;
+  }
+}
+
+.nojs .c-project__filter {
+  display: none;
+}
+.nojs .c-project {
+  display: block;
+}

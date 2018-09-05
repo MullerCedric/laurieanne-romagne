@@ -1,0 +1,126 @@
+mixin head(page)
+    head
+        meta(charset="utf-8")
+        meta(name="author" content="Cédric Müller")
+        meta(name="description" content="Site de la photographe et artiste liègeoise Laurie-Anne Romagne")
+        meta(name="keywords" content="Laurie-Anne Photographie, photo, photographe, Liège, artiste, Romagne")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+
+        title #{page} | Laurie-Anne Romagne Photographie
+        link( rel="stylesheet", href= "assets/css/lr-styles.css" )
+        link( rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png" )
+        link( rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" )
+        link( rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png" )
+        link( rel="manifest" href="./assets/images/site.webmanifest" )
+        link( rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5" )
+        link( rel="shortcut icon" href="./assets/images/favicon.ico" )
+        meta( name="msapplication-TileColor" content="#826C46" )
+        meta( name="msapplication-config" content="./assets/images/browserconfig.xml" )
+        meta( name="theme-color" content="#ffffff" )
+
+mixin mainNav(current)
+    nav( class="c-headerNav" )
+        div( class="o-wrapper" )
+            div( class="o-grid o-grid--v-centered" )
+                h2( class="hidden" ) Navigation principale
+                div
+                    a( href="#content" class="hidden" ) Accéder directement au contenu du site
+                div( class="o-grid__col c-logo c-headerNav__logo" )
+                    a( href="./index.html" title="Vers la page d'accueil" class="o-grid__cell c-logo__link" )
+                        include ../inc/_logo.svg
+
+                div( class="o-grid__col" )
+                    input( type="checkbox" class="c-headerNav__burger-check c-headerNav__burger" )
+                    span( class="c-headerNav__burger-line c-headerNav__burger" )
+                    span( class="c-headerNav__burger-line c-headerNav__burger" )
+                    span( class="c-headerNav__burger-line c-headerNav__burger" )
+                    ul( class="c-headerNav__list o-grid__cell" )
+                        li( class="c-headerNav__item c-headerNav__item@mobile" )
+                            if current === "accueil"
+                                a( href="./index.html" class="c-headerNav__link c-headerNav__link--current" ) Accueil
+
+                            else
+                                a( href="./index.html" class="c-headerNav__link" ) Accueil
+
+                        li( class="c-headerNav__item" )
+                            if current === "professionnels"
+                                a( href="./professionnels.html" class="c-headerNav__link c-headerNav__link--current" ) Professionnels
+
+                            else
+                                a( href="./professionnels.html" class="c-headerNav__link" ) Professionnels
+
+                        li( class="c-headerNav__item" )
+                            if current === "particuliers"
+                                a( href="./particuliers.html" class="c-headerNav__link c-headerNav__link--current" ) Particuliers
+                            else
+                                a( href="./particuliers.html" class="c-headerNav__link" ) Particuliers
+
+                        li( class="c-headerNav__item" )
+                            if current === "artistique"
+                                a( href="./artistique.html" class="c-headerNav__link c-headerNav__link--current" ) Artistique
+                            else
+                                a( href="./artistique.html" class="c-headerNav__link" ) Artistique
+                        li( class="c-headerNav__item" )
+                            if current === "expos"
+                                a( href="./expos.html" class="c-headerNav__link c-headerNav__link--current" ) Expos
+                            else
+                                a( href="./expos.html" class="c-headerNav__link" ) Expos
+                        li( class="c-headerNav__item" )
+                            if current === "contact"
+                                a( href="./contact.html" class="c-headerNav__link c-headerNav__link--current" ) Contact
+                            else
+                                a( href="./contact.html" class="c-headerNav__link" ) Contact
+
+mixin footer
+    footer( class="c-footer" )
+        div( class="o-wrapper" )
+            div( class="o-grid" )
+                section( class="o-grid__col gd-6/18 gd-9/18@mobile c-footer__coord" )
+                    div( class="o-grid__cell" )
+                        h2( class="hidden" ) Coordonnées
+                        p Laurie-Anne Romagne<br>Photographie Créative
+                        p
+                            a( href="./contact.html" title="Vers la page Contact" ) Me contacter
+                        small Toutes les photos de ce site sont protégées<br>Photos : &copy; Laurie-Anne Romagne<br>Site : &copy; Cédric Müller
+
+                nav( class="o-grid__col gd-6/18 hidden@mobile c-footer__nav" )
+                    div( class="o-grid__cell" )
+                        h2( class="hidden" ) Navigation secondaire
+                        ul
+                            li( class="c-footer__item" )
+                                a( href="./index.html" title="Vers la page d'accueil" ) Accueil
+                            li( class="c-footer__item" )
+                                a( href="./professionnels.html" title="Vers la page Professionnels" ) Professionnels
+                            li( class="c-footer__item" )
+                                a( href="./particuliers.html" title="Vers la page Particuliers" ) Particuliers
+                                ul
+                                    li( class="c-footer__item" )
+                                        a( href="./details-categorie.html" title="Vers la page Mariage" ) Mariage
+                                    li( class="c-footer__item" )
+                                        a( href="./details-categorie.html" title="Vers la page Portrait" ) Portrait
+                                    li( class="c-footer__item" )
+                                        a( href="./details-categorie.html" title="Vers la page Grossesse & naissance" ) Grossesse & naissance
+                            li( class="c-footer__item" )
+                                a( href="./artistique.html" title="Vers la page Artistique" ) Artistique
+                                ul
+                                    li( class="c-footer__item" )
+                                        a( href="http://www.google.com/" title="Vers le site de notre partenaire" ) Acheter chez notre partenaire
+                            li( class="c-footer__item" )
+                                a( href="./expos.html" title="Vers la page Expo" ) Expo
+                            li( class="c-footer__item" )
+                                a( href="./contact.html" title="Vers la page Contact" ) Contact
+
+                nav( class="o-grid__col gd-6/18 gd-9/18@mobile c-footer__socials" )
+                    div( class="o-grid__cell" )
+                        h2( class="hidden" ) Suivez-moi sur les réseaux sociaux
+                        ul
+                            li( class="c-footer__item c-footer__social-item" )
+                                a( href="https://www.facebook.com/laurieanneromagnephotographie" title="Vers ma page facebook" class="c-footer__social" )
+                                    span( class="hidden@lap" ) Laurie-Anne Romagne Photographie
+                            li( class="c-footer__item c-footer__social-item" )
+                                a( href="https://www.instagram.com/laurieanneromagnephotographie/" title="Vers ma page instagram" class="c-footer__social c-footer__social--insta" )
+                                    span( class="hidden@lap" ) laurieanneromagnephotographie
+                            li( class="c-footer__item c-footer__social-item" )
+                                a( href="mailto:info@laurieanne-romagne.com" title="M'envoyer un e-mail" class="c-footer__social c-footer__social--mail" )
+                                    span( class="hidden@lap" ) info@laurieanne-romagne.com
+    script( src="./assets/js/lr-scripts.js" )

@@ -1,0 +1,40 @@
+.c-info {
+  background-color: $white;
+  margin-bottom: 6em;
+  &__banner {
+    width: 100%;
+    height: auto;
+  }
+  &__content {
+    padding: .3em 1.4em 2em 1.5em;
+  }
+  &__pic {
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: -6.5em auto 0;
+    border: 16px solid $white;
+    box-sizing: content-box;
+  }
+}
+@media all and (max-width: $mobile) {
+  .c-info {
+    &__pic {
+      height: 120px;
+      width: 120px;
+      margin: -5.5em auto 0;
+    }
+  }
+}
+
+@media all and (max-width: $thumb) {
+  .c-info {
+    &__pic {
+      height: 115px;
+      width: 115px;
+      margin: -5em auto 0;
+    }
+  }
+}

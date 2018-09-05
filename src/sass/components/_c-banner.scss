@@ -1,0 +1,47 @@
+.c-banner {
+  height: 450px;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  &--professionnels {
+    height: 365px;
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-professionnels.jpg');
+  }
+  &--artistique {
+    height: 365px;
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-artistique.jpg');
+  }
+  &--expos {
+    height: 365px;
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-expos.jpg');
+  }
+  &--projet {
+    height: 365px;
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-projet.jpg');
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .c-banner {
+    background-size: cover;
+    height: auto;
+    &--professionnels {
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-professionnels-sm.jpg');
+    }
+    &--artistique {
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-artistique-sm.jpg');
+    }
+    &--expos {
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-expos-sm.jpg');
+    }
+    &--projet {
+      background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('../images/banner-projet-sm.jpg');
+    }
+  }
+}

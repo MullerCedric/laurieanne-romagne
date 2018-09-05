@@ -1,0 +1,107 @@
+*, :after, :before {
+  box-sizing: border-box
+}
+
+// Grid
+.#{$gdName} {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  padding: 0;
+  list-style: none;
+  //justify-content: center;
+  &--v-centered {
+    align-items: center;
+  }
+  &--spaced {
+    justify-content: space-between;
+    .bar {
+      flex: none;
+      width: 1px;
+      background-color: $gray;
+      margin-right: -24px;
+      margin-bottom: 1.5em;
+    }
+  }
+  &--no-gutter {
+    margin: 0;
+    &:last-of-type {
+      margin: 0 0 6em;
+    }
+  }
+}
+
+// Col
+.#{$gdName} > .#{$gdName}__#{$cellAndGutterName} { // gutter
+  padding-left: $gutter;
+}
+
+.#{$gdName}--no-gutter > .#{$gdName}__#{$cellAndGutterName} { // no-gutter
+  padding-left: 0;
+}
+
+.#{$gdName}__#{$cellAndGutterName} {
+  flex: 1 1 0%;
+  min-width: 25px;
+
+  &--offset {
+    margin-left: - percentage( 1 / $colNumber );
+    position: relative;
+    z-index: -1;
+  }
+  &--margin1 {
+    margin-left: percentage(1 / $colNumber * 1);
+    margin-right: percentage(1 / $colNumber * 1);
+  }
+  &--marginL1 {
+    margin-left: percentage(1 / $colNumber * 1);
+  }
+  &--marginR2 {
+    margin-right: percentage(1 / $colNumber * 2);
+  }
+
+  &--streched {
+    display: flex;
+  }
+}
+
+@for $i from 1 through $colNumber { // col width
+  .gd-#{$i}\/#{$colNumber} {
+    width: percentage($i / $colNumber);
+    flex: none;
+  }
+}
+
+.#{$gdName}__#{$cellName} {
+  flex: 1 1 0%;
+  min-width: 0;
+  &--v-centered {
+    align-self: center;
+  }
+}
+
+@media all and (max-width: $lap) {
+  .#{$gdName}--spaced {
+    justify-content: center;
+    .bar {
+      display: none;
+    }
+  }
+}
+
+@each $name, $rule in $breakpoints {
+  @media #{$rule} {
+    @for $i from 1 through $colNumber {
+      .gd-#{$i}\/#{$colNumber}\@#{$name} {
+        width: percentage($i / $colNumber);
+        flex: none;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .unsetMargin\@mobile {
+    margin: unset;
+  }
+}

@@ -1,78 +1,131 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Accueil | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Accueil")
 
-    body( id="top" )
-        header
+    body( id="top" class="nojs" )
+        header( class="o-wrapper c-header" )
+            div( role="banner" class="c-banner" )
+                h1 Laurie-Anne Romagne
+                p( class="c-banner__subtitle" ) Photographie créative
 
-            div( role="banner" )
-                h1( role="heading" aria-level="1" ) Photographie créative
+            +mainNav( "accueil" )
 
-            include includes/_nav.pug
+        main( class="o-wrapper" id="content" )
+            section( class="o-grid" )
+                h2( class="o-grid__col gd-18/18" ) Mes travaux
+                div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
+                    section( class="o-grid__cell c-cat" )
+                        div
+                            img( src="./assets/images/thumb-professionnels.jpg" srcset="./assets/images/thumb-professionnels.jpg 337w, ./assets/images/thumb-professionnels-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo faite pour la société Infrabel représentant un wagon et le texte 'safety first'" class="c-cat__banner" )
+                        div( class="c-cat__content" )
+                            h3 Professionnels
+                            p Mauris ut nisi lobortis, dictum risus id, sollicitudin lectus. Nullam vitae magna
+                        p( class="c-cta c-cat__footLink" )
+                            a( href="./professionnels.html" title="Vers la page Professionnels" class="c-cta__link" ) Parcourir
+                div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
+                    section( class="o-grid__cell c-cat" )
+                        div
+                            img( src="./assets/images/thumb-particuliers.jpg" srcset="./assets/images/thumb-particuliers.jpg 337w, ./assets/images/thumb-particuliers-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo représentant deu enfants sur un fauteuil blanc" class="c-cat__banner" )
+                        div( class="c-cat__content" )
+                            h3 Particuliers
+                            p Ed luctus et purus vitae hendrerit. Nunc varius est justo, quis convallis nulla commodo sagittis. Nunc gravida elementum
+                        p( class="c-cta c-cat__footLink" )
+                            a( href="./particuliers.html" title="Vers la page Particuliers" class="c-cta__link" ) Découvrir
+                div( class="o-grid__col gd-6/18 gd-18/18@mobile o-grid__col--streched" )
+                    section( class="o-grid__cell c-cat" )
+                        div
+                            img( src="./assets/images/thumb-artistique.jpg" srcset="./assets/images/thumb-artistique.jpg 337w, ./assets/images/thumb-artistique-sm.jpg 605w" sizes="(max-width: 650px) 605px, (min-width: 651px) 337px" alt="Photo d'une main mi-close touchant le sol" class="c-cat__banner" )
+                        div( class="c-cat__content" )
+                            h3 Artistique
+                            p Proin non ligula id leo euismod elementum scelerisque ut lorem. Augue molestie ultrices varius, sed molestie dolor dui in dolor
+                        p( class="c-cta c-cat__footLink" )
+                            a( href="./artistique.html" title="Vers la page Artistique" class="c-cta__link" ) Explorer
 
-        main
-            section
-                h2( role="heading" aria-level="2" ) Mes travaux
-                section
-                    h3( role="heading" aria-level="3" ) Professionnels
-                    p Mauris ut nisi lobortis, dictum risus id, sollicitudin lectus. Nullam vitae magna
-                    p
-                        a( href="#" title="Vers la page Professionnels" ) > Parcourir
-                section
-                    h3( role="heading" aria-level="3" ) Particuliers
-                    p Ed luctus et purus vitae hendrerit. Nunc varius est justo, quis convallis nulla commodo sagittis. Nunc gravida elementum
-                    p
-                        a( href="#" title="Vers la page Particuliers" ) > Découvrir
-                section
-                    h3( role="heading" aria-level="3" ) Artistique
-                    p Proin non ligula id leo euismod elementum scelerisque ut lorem. Augue molestie ultrices varius, sed molestie dolor dui in dolor
-                    p
-                        a( href="#" title="Vers la page Artistique" ) > Explorer
+            section( class="o-grid o-grid--spaced" )
+                h2( class="o-grid__col gd-18/18" ) L'actualité du moment
+                div( class="o-grid__col gd-8/18 gd-14/18@lap gd-18/18@phablet" )
+                    article( class="o-grid__cell c-expo" )
+                        div( class="c-expo__banner hidden@thumb" )
+                            img( src="./assets/images/expo-1.jpg" alt="Photo d'un couloir avec des photos encadrées au mur" )
+                        div( class="c-expo__content" )
+                            h3 Résidence à Berlin
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum facilsis ligula, sed accumsan nisl imperiet sit amet. Fusce semper venenatis
+                div( class="bar" )
+                div( class="o-grid__col gd-8/18 gd-14/18@lap gd-18/18@phablet" )
+                    article( class="o-grid__cell c-expo" )
+                        div( class="c-expo__banner hidden@thumb" )
+                            img( src="./assets/images/expo-2.jpg" alt="Affiche d'Expolaroid avec, en fond, une photo de végétaux en contre-jour" )
+                        div( class="c-expo__content" )
+                            h3 Expo à Bruxelles
+                            p Vestibulum ac erat sit amet augue tincidunt pretium. Vivamus ut eros eu turpis suscipit commodo. Nulla vehicula lorem felis
+                div( class="o-grid__col gd-18/18 c-cta" )
+                    div( class="o-grid__cell" )
+                        a( href="./expos.html" title="Vers la page Expos" class="c-cta__button" )
+                            span( class="text" ) Retrouver les dates importantes
+                            span( class="line -right" )
+                            span( class="line -top" )
+                            span( class="line -left" )
+                            span( class="line -bottom" )
 
-            section
-                h2( role="heading" aria-level="2" ) L'actualité du moment
-                article
-                    h3( role="heading" aria-level="3" ) Résidence à Berlin
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum facilsis ligula, sed accumsan nisl imperiet sit amet. Fusce semper venenatis. Aliquam sit amet velit nec risus pretium maximus.
-                article
-                    h3( role="heading" aria-level="3" ) Expo à Bruxelles
-                    p Vestibulum ac erat sit amet augue tincidunt pretium. Vivamus ut eros eu turpis suscipit commodo. Nulla vehicula lorem felis, a accumsan ex pellentesque sit amet. Duis nec quam nulla. Mauris nunc est.
-                div
-                    a( href="#" title="Vers la page Expos" ) Retrouver les dates importantes
+            section( class="c-about" itemscope itemtype="http://schema.org/Person" )
+                div( class="o-grid o-grid--v-centered" )
+                    div( class="o-grid__col o-grid__col--margin1" )
+                        div( class="o-grid__cell" )
+                            h2( class="c-about__title" )
+                                span( itemprop="givenName" ) Laurie-Anne
+                                span( itemprop="familyName" ) Romagne
+                                span( itemprop="jobTitle" content="Photographe" )
+                            p( class="c-about__subtitle" ) À propos de moi...
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                            div( class="c-cta" )
+                                a( href="./contact.html" title="Vers la page de contact" class="c-cta__button" )
+                                    span( class="text" ) Travailler avec moi
+                                    span( class="line -right" )
+                                    span( class="line -top" )
+                                    span( class="line -left" )
+                                    span( class="line -bottom" )
+                    div( class="o-grid__col gd-4/18 gd-5/18@notebook hidden@tablet o-grid__col--marginR2" )
+                        aside( class="o-grid__cell c-about__aside" )
+                            h3( class="hidden" ) Plus me concernant
+                            p
+                                img( src="./assets/images/la-romagne.jpg" alt="Photo me représentant en double exposition avec des nuages" class="c-about__pic" )
+                            div( class="c-about__content" )
+                                p
+                                    q( class="c-about__quote" ) Sit amet ut elit nisi orci
 
-            section
-                h2( role="heading" aria-level="2" ) Laurie-Anne Romagne
-                section
-                    h3( role="heading" aria-level="3" ) À propos de moi...
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
-                    div
-                        a( href="#" title="Vers la page Expos" ) Travailler avec moi
-                aside
-                    h3( class="hidden" role="heading" aria-level="3" ) Plus me concernant
-                    p
-                        q Lorem ipsum dolor sit amet
+            section( class="o-grid c-insta" )
 
-            section
-                h2( role="heading" aria-level="2" ) Retrouvez-moi sur Instagram
-                ul
-                    li
-                    li
-                    li
-                    li
-                section
-                    h3( role="heading" aria-level="3" ) laurieanneromagnephotographie
-                    p 46 publications, 85 abonnés
-                    p <strong>Laurie-Anne Romagne</strong> Photographe
-                    p www.facebook.com/laurieanneromagnephotographie
-                    p
-                        a( href="#" title="Vers ma page instagram" ) S’abonner
-                ul
-                    li
-                    li
-                    li
-                    li
+                h2( class="o-grid__col gd-18/18" ) Retrouvez-moi sur Instagram
+                div( class="o-grid__col gd-6/18 gd-18/18@tablet" )
+                    ul( class="o-grid" )
+                        li( class="o-grid__col gd-9/18 c-insta__pic" )
+                            img( src="./assets/images/insta1.jpg" alt="L'une de mes dernières photos instagram" )
+                        li( class="o-grid__col gd-9/18 c-insta__pic" )
+                            img( src="./assets/images/insta2.jpg" alt="L'une de mes dernières photos instagram" )
+                        li( class="o-grid__col gd-9/18 hidden@thumb c-insta__pic" )
+                            img( src="./assets/images/insta3.jpg" alt="L'une de mes dernières photos instagram" )
+                        li( class="o-grid__col gd-9/18 hidden@thumb c-insta__pic" )
+                            img( src="./assets/images/insta4.jpg" alt="L'une de mes dernières photos instagram" )
+                div( class="o-grid__col gd-6/18 gd-18/18@tablet o-grid__col--streched" )
+                    div( class="o-grid__cell c-insta__desc o-grid o-grid--v-centered" )
+                        div( class="c-insta__content" )
+                            p
+                                strong laurieanneromagnephotographie
+                            p 60 publications, 100 abonnés
+                            p <strong>Laurie-Anne Romagne</strong> Photographe
+                            p( class="c-cta" )
+                                a( href="https://www.instagram.com/laurieanneromagnephotographie/" title="Vers ma page instagram" class="c-cta__link" ) S’abonner
+                div( class="o-grid__col gd-6/18 gd-18/18@tablet" )
+                    ul( class="o-grid" )
+                        li(class="o-grid__col gd-9/18 c-insta__pic" )
+                            img( src="./assets/images/insta5.jpg" alt="L'une de mes dernières photos instagram" )
+                        li(class="o-grid__col gd-9/18 c-insta__pic" )
+                            img( src="./assets/images/insta6.jpg" alt="L'une de mes dernières photos instagram" )
+                        li(class="o-grid__col gd-9/18 hidden@thumb c-insta__pic" )
+                            img( src="./assets/images/insta7.jpg" alt="L'une de mes dernières photos instagram" )
+                        li(class="o-grid__col gd-9/18 hidden@thumb c-insta__pic" )
+                            img( src="./assets/images/insta8.jpg" alt="L'une de mes dernières photos instagram" )
 
 
-        include includes/_footer.pug
+        +footer

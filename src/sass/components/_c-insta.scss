@@ -1,0 +1,32 @@
+.c-insta {
+  & h3 {
+    font-size: 1em;
+  }
+  &__pic {
+    &:nth-child(-n+2) {
+      margin-bottom: 1.5em;
+    }
+  }
+  &__desc {
+    background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.4)), url('../images/insta-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    padding: 1.25em 1.2em 1.25em 1.25em;
+    margin: 0;
+  }
+  &__content {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: $tablet) {
+  .c-insta {
+    &__pic {
+      width: auto;
+      flex: 1 1 0%;
+    }
+    &__desc {
+      margin-bottom: 1.5em;
+    }
+  }
+}

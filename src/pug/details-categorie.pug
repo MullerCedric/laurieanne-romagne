@@ -1,52 +1,57 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Catégorie 'mariage' | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Mariages")
 
-    body( id="top" )
-        header
+    body( id="top" class="nojs" )
+        header( class="c-header o-wrapper" id="content" )
 
-            div( role="banner" style="width: 936px; overflow: hidden; margin: auto;" )
-                div( style="width: 216px; height: 538px; float: left; background-color : #AAA; border: 1px solid black; box-sizing: border-box; margin-right: 24px;" )
-                div( style="width: 216px; height: 168px; float: left; background-color : #AAA; border: 1px solid black; box-sizing: border-box; margin-right: 24px;" )
-                div( style="width: 456px; height: 168px; float: right; background-color : #AAA; border: 1px solid black; box-sizing: border-box; margin-bottom: 24px;" )
-                div( style="width: 456px; height: 346px; float: left; background-color : #AAA; border: 1px solid black; box-sizing: border-box;" )
-                    h1( role="heading" aria-level="1" ) Mariage
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
-                div( style="width: 216px; height: 538px; float: right; background-color : #AAA; border: 1px solid black; box-sizing: border-box;" )
-                div( style="width: 456px; height: 168px; float: left; background-color : #AAA; border: 1px solid black; box-sizing: border-box; margin-top: 24px;" )
-                div( style="width: 216px; height: 168px; float: right; background-color : #AAA; border: 1px solid black; box-sizing: border-box; margin-top: 24px; margin-right: 24px" )
-                div( style="clear: both; text-align: center;" )
-                    a( href="#" title="Vers la page de contact" ) Commander mes services pour des photos inoubliables
-                div( style="text-align: center;" )
-                    a( href="#" title="Vers l'e-shop externe" ) Voir les livres mariages que j’ai réalisé
+            div( role="banner" class="c-spiral" )
+                div( class="c-spiral__img")
+                    img( src="./assets/images/mariage1.jpg" alt="Photo" class="c" )
+                div( class="c-spiral__img" )
+                    img( src="./assets/images/mariage2.jpg" alt="Photo" class="c" )
+                div( class="c-spiral__img" )
+                    img( src="./assets/images/mariage3.jpg" alt="Photo" class="c" )
+                div( class="c-spiral__img" )
+                    h1 Mariage
+                    p( class="c-spiral__content" ) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet velit nec risus pretium maximus. In sit amet nunc nulla. Cras iaculis turpis sed turpis placerat hendrerit. Mauris ut nisi lobortis, dictum orci.
+                div( class="c-spiral__img" )
+                    img( src="./assets/images/mariage5.jpg" alt="Photo" class="c" )
+                div( class="c-spiral__img" )
+                    img( src="./assets/images/mariage6.jpg" alt="Photo" class="c" )
+                div( class="c-spiral__img" )
+                    img( src="./assets/images/mariage7.jpg" alt="Photo" class="c" )
 
-            include includes/_nav.pug
+            div( class="c-cta" )
+                a( href="./contact.html" title="Vers la page de contact" class="c-cta__button" )
+                    span( class="text" ) Commander mes services pour des photos inoubliables
+                    span( class="line -right" )
+                    span( class="line -top" )
+                    span( class="line -left" )
+                    span( class="line -bottom" )
+            div( class="c-cta" )
+                a( href="http://www.google.com/" title="Vers l'e-shop externe" class="c-cta__button" )
+                    span( class="text" ) Voir les livres mariages que j’ai réalisé
+                    span( class="line -right" )
+                    span( class="line -top" )
+                    span( class="line -left" )
+                    span( class="line -bottom" )
+
+            +mainNav("particuliers")
 
 
-        main
+        main( class="o-wrapper" )
             section
-                h2( role="heading" aria-level="2" ) L'ensemble de mes projets <em>Mariage</em>
+                h2 L'ensemble de mes projets <em>Mariage</em>
 
-                ul
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Famille Lorem
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Mariage sur le thème Ipsum
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Famille Dolor
-                    li
-                        a( href="#" title="Voir les détail de ce projet" )
-                            figure
-                                figcaption Sit & Amet
+                ul( class="o-grid" )
+                    each val, index in ['Famille Lorem', 'Mariage sur le thème Ipsum', 'Famille Dolor', 'Sit & Amet']
+                        li( class="o-grid__col gd-6/18 gd-9/18@mobile gd-18/18@thumb c-project" )
+                            a( href="./details-projet.html" title="Voir les détails de ce projet" )
+                                figure( class="o-grid__cell c-project__item" )
+                                    img( src='./assets/images/thumb-par-art1.jpg' srcset='./assets/images/thumb-par-art1.jpg 336w, ./assets/images/thumb-par-art1-sm.jpg 377w' sizes="(max-width: 375px) 377px, (min-width: 376px) 336px" alt="Photo représentant le projet" )
+                                    figcaption( class="c-project__content" ) #{val}
 
 
-
-        include includes/_footer.pug
+        +footer

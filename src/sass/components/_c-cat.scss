@@ -1,0 +1,22 @@
+.c-cat {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  &__banner {
+    width: 100%;
+    height: auto;
+  }
+  &__content {
+    flex: 1 1 auto;
+    padding: 1em;
+  }
+}
+p.c-cat__footLink {
+  margin: .9em auto 1.1em;
+}
+
+@media all and (max-width: $mobile) {
+  .c-cat {
+    margin-bottom: 1.5em;
+  }
+}

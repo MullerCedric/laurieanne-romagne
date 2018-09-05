@@ -1,44 +1,58 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Contact | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Contact")
 
-    body( id="top" )
-        header
+    body( id="top" class="nojs" )
+        header( class="o-wrapper c-header c-header--empty" )
+            h1( class="hidden" ) Contact
 
-            h1( role="heading" aria-level="1" ) Contact
+            +mainNav("contact")
 
-            include includes/_nav.pug
+        main( class="o-wrapper" id="content" )
+            div( class="o-grid" )
+                div( class="o-grid__col gd-6/18 gd-8/18@phablet gd-18/18@mobile o-grid__col--streched" )
+                    aside( class="o-grid__cell c-info" )
+                        div
+                            img( src="./assets/images/banner-contact.jpg" srcset="./assets/images/banner-contact.jpg 337w, ./assets/images/banner-contact-sm.jpg 600w" sizes="(max-width: 650px) 600px, (min-width: 651px) 337px" alt="Photo d'une étendue d'eau bleu" class="c-info__banner" )
+                        div( class="c-info__pic" )
+                            img( src="./assets/images/la-romagne-contact.jpg" alt="Photo d'une étendue d'eau bleu" )
+                        div( class="c-info__content" )
+                            h2( class="hidden" ) Qui suis-je ?
+                            p Je pratique depuis plusieurs années une photographie d’auteur à tendance autobiographique et poétique.
+                            p Je réalise également des reportages sur divers sujets de proximité, aussi bien pour des professionnels que pour des particuliers. Mon activité photographique est ainsi très diversifiée.
+                            p J’aime varier et expérimenter diverses techniques de prise de vue et d’impression : numérique, polaroid, photographisme, gomme bichromatée…
+                            p E-mail : <a href="mailto:laurieanne-romagne@gmail.com" title="Envoyer un e-mail à mon adresse">laurieanne-romagne@gmail.com</a>
 
-        aside
-            h2( role="heading" aria-level="2" ) Qui suis-je ?
-            p Je pratique depuis plusieurs années une photographie d’auteur à tendance autobiographique et poétique.
-            p Je réalise également des reportages sur divers sujets de proximité, aussi bien pour des professionnels que pour des particuliers. Mon activité photographique est ainsi très diversifiée.
-            p J’aime varier et expérimenter diverses techniques de prise de vue et d’impression : numérique, polaroid, photographisme, gomme bichromatée…
-            p E-mail : <a href="mailto:laurieanne-romagne@gmail.com" title="Envoyer un e-mail à mon adresse">laurieanne-romagne@gmail.com</a>
+                div( class="o-grid__col o-grid__col--marginL1 unsetMargin@mobile" )
+                    section( class="c-form__sent" )
+                        h2 Message envoyé !
+                        p Votre message a correctement été envoyé. J'y répondrai dans les plus brefs délais
+                    form( action="#" method="POST" class="o-grid__cell c-form" )
+                        div( class="o-grid" )
+                            div( class="o-grid__col gd-7/18 gd-18/18@phablet gd-7/18@mobile gd-18/18@thumb" )
+                                div( class="o-grid__cell" )
+                                    label( for="nom" ) Votre nom :
+                                    input( type="text" id="nom" name="nom" placeholder="John Doe" class="c-form__name c-form__input" autocomplete="name" required )
+                                    div( class="c-form__error" ) Merci d'indiquer correctement votre nom
+                            div( class="o-grid__col gd-18/18@phablet gd-11/18@mobile gd-18/18@thumb" )
+                                div( class="o-grid__cell" )
+                                    label( for="mail" ) Votre e-mail :
+                                    input( type="email" id="mail" name="mail" placeholder="adresse@gmail.com" class="c-form__mail c-form__input" autocomplete="email" required )
+                                    div( class="c-form__error" ) Merci d'indiquer une adresse e-mail valide
+                        div
+                            p
+                                label( for="message" ) Votre message :
+                            textarea( id="message" name="message" class="c-form__message c-form__input" required )
+                            div( class="c-form__error" ) Votre message doit faire au moins 10 caractères
 
-        main
-            form( action="#" type="POST" )
-                section
-                    h2 Oups !
-                    p Merci d'indiquer votre nom
-                    p Merci d'indiquer une adresse e-mail valide
-                    p Votre message doit faire au moins 10 caractères
-                section
-                    h2 Message envoyé !
-                    p Votre message a correctement été envoyé. J'y répondrai dans les plus brefs délais
-                p
-                    label( for="nom" ) Votre nom :
-                    input( type="text" id="nom" name="nom" placeholder="John Doe" )
-                p
-                    label( for="mail" ) Votre e-mail :
-                    input( type="text" id="mail" name="mail" placeholder="adresse@gmail.com" )
-                p
-                    label( for="message" ) Votre message :
-                textarea( id="message" name="message" )
-                p
-                    input( type="submit" value="Envoyer" )
+                        div( class="c-cta" )
+                            div( class="c-cta__button c-form__submit" )
+                                input( class="text" type="submit" value="Envoyer" )
+                                span( class="line -right" )
+                                span( class="line -top" )
+                                span( class="line -left" )
+                                span( class="line -bottom" )
 
 
-        include includes/_footer.pug
+        +footer

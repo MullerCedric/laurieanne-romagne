@@ -1,0 +1,16 @@
+.c-subcat {
+  background-color: $white;
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+  &__content {
+    padding: 2em;
+  }
+}
+@media all and (max-width: $tablet) {
+  .c-subcat {
+    margin-bottom: 1.5em;
+    order: 2;
+  }
+}

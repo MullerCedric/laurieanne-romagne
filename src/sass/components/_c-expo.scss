@@ -1,0 +1,33 @@
+.c-expo {
+  background-color: $white;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+  position: relative;
+  &__banner {
+    float: left;
+    margin-right: 1em;
+  }
+  &__content {
+    margin: .75em .75em 1em 1em;
+  }
+  &__time {
+    position: absolute;
+    left: 0;
+    top: 1em;
+    padding: .35em .7em;
+    background-color: $primary;
+    color: $white;
+
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+@media all and (max-width: $mobile) {
+  .c-expo {
+    height: auto;
+  }
+}

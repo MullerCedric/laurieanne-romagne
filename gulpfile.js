@@ -7,7 +7,7 @@
  */
 
 var gulp = require("gulp"),
-    image = require("gulp-image"),
+    images = require("gulp-imagemin"),
     htmlmin = require('gulp-htmlmin'),
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
@@ -19,7 +19,7 @@ var gulp = require("gulp"),
 // --- Task for images
 gulp.task("images", function () {
     gulp.src("src/images/**")
-        .pipe(image())
+        .pipe(images())
         .pipe(gulp.dest("assets/images"));
 });
 
@@ -64,4 +64,5 @@ gulp.task("watch", function () {
 
 // --- Aliases
 gulp.task("default", ["images", "html", "css", "js"]);
+gulp.task("front", ["html", "css", "js"]);
 gulp.task("work", ["default", "watch"]);

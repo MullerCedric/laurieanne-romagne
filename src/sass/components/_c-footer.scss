@@ -1,0 +1,55 @@
+.c-footer {
+  background-color: $white;
+  padding: 2em 0 3em;
+  color: $black;
+  &__item {
+    display: block;
+    margin-bottom: .25em;
+  }
+  section {
+    margin: 0;
+  }
+  p, p:last-of-type {
+    margin-bottom: .5em;
+  }
+  &__social:before {
+    content: "\e028";
+    display: inline-block;
+    font-family: 'Socicon', sans-serif;
+    padding: .75em;
+    background-color: $primary;
+    color: $white;
+    border-radius: 100%;
+    margin-right: .75em;
+    margin-bottom: .75em;
+  }
+  &__social:hover:before {
+    background-color: $lightPrimary;
+    color: $black;
+  }
+  &__social--insta:before {
+    content: "\e044";
+  }
+
+  &__social--mail:before {
+    content: "\e050";
+  }
+}
+
+@media all and (max-width: $lap) {
+  .c-footer {
+    &__social-item {
+      display: inline-block;
+    }
+  }
+}
+@media all and (max-width: $mobile) {
+  .c-footer {
+    .o-grid {
+      justify-content: space-between;
+    }
+    &__socials {
+      text-align: right;
+    }
+  }
+}

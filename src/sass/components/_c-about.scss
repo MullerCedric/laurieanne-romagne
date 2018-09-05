@@ -1,0 +1,58 @@
+.c-about {
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/about.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 375px;
+  color: $white;
+  text-align: center;
+  a {
+    color: $lightPrimary;
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+  &__title {
+    margin-bottom: .25em;
+    &:before, &:after {
+      content: "";
+      display: none;
+    }
+  }
+  &__subtitle {
+    font-weight: 300;
+    margin-bottom: .5em;
+  }
+  &__aside {
+    background-color: white;
+    color: $black;
+    height: 375px;
+    text-align: left;
+    font-weight: 300;
+  }
+  &__content {
+    margin: 1em;
+  }
+  &__quote {
+    &:before, &:after {
+      content: "\00ab\00a0";
+      display: inline;
+      font-size: 1.2em;
+    }
+    &:after {
+      content: "\00a0\00bb";
+    }
+  }
+  &__pic {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media all and (max-width: $tablet) {
+  .c-about {
+    height: auto;
+    padding: 3.5em 0;
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/about-sm.jpg');
+    background-size: cover;
+  }
+}

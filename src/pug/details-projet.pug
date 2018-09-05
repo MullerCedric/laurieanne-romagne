@@ -1,41 +1,38 @@
 doctype html
+include inc/_mixins.pug
 html( lang="fr" )
-    head
-        title Bretagne Contraire | Laurie-Anne Romagne Photographie
-        include includes/_head.pug
+    +head("Bretagne contraire")
 
-    body( id="top" )
-        header
+    body( id="top" class="nojs" )
+        header( class="o-wrapper c-header" )
+            div( role="banner" class="c-banner c-banner--projet" )
+                h1 Bretagne contraire<span class="hidden"> | Galleie photo</span>
+                p Page de présentation d'un projet. Arcu tincidunt port titor quis tellus. Phasellus a scelerisque lectus. Vestibulum rutrum, tellblus et eleifend dapibus, nisi mi mauris, id facilisis erat enim id ante.
 
-            div( role="banner" )
-                h1( role="heading" aria-level="1" ) Bretagne contraire
-                p Ut sodales nulla vel gravida lacinia. Cras in neque vitae arcu tincidunt port titor quis tellus. Phasellus a scelerisque lectus. Vestibulum rutrum, tellblus et eleifend dapibus, nisi mi mauris, id facilisis erat enim id ante.
-
-            include includes/_nav.pug
+            +mainNav("artistique")
 
 
-        main
+        main( class="o-wrapper" id="content" )
             section
-                h2( role="heading" aria-level="2" ) Mes projets artistiques
+                h2 Mes projets artistiques
 
-                ul
+                ul( class="c-gallery" )
                     li
-                        figure
+                        img( src="./assets/images/projet1.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet2.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet3.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet4.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet5.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet6.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet7.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
                     li
-                        figure
+                        img( src="./assets/images/projet8.jpg" alt="L'une des photos de ce projet" class="c-gallery__img" )
 
 
-
-        include includes/_footer.pug
+        +footer

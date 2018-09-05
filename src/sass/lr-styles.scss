@@ -1,0 +1,57 @@
+/* Laurie-Anne Romagne
+ * /src/sass/lr-styles.scss - Main styles
+ * coded by MullerCedric
+ */
+
+// ITCSS
+// Settings : Font definition, colors, variables, etc
+// Tools : Mixins and functions
+// Generic : Ground-zero styles (Normalize, reset, box-sizing)
+// Base : Bare HTML elements (headings, links, reset list, anchors, etc) -> "redifining browser default styling"
+// Objects : Cosmetic-free/undecorated design patterns (Media Object, containers, grids, global animation, etc)
+// Components : Designed components, specific chunks of UI. UI components are often composed of Objects and Components
+// Trumps : Utilities and helper classes with ability to override anything (hide helper, etc.)
+
+
+@import "settings/colors";
+@import "settings/fonts";
+@import "settings/animations";
+@import "settings/grid-variables";
+
+@import "tools/mixins";
+
+@import "generic/reset";
+
+@import "base/body";
+@import "base/headings";
+@import "base/images";
+@import "base/inputs";
+@import "base/links";
+@import "base/main";
+@import "base/nav";
+@import "base/section";
+@import "base/sizes";
+@import "base/type";
+
+@import "objects/o-wrapper";
+@import "objects/o-grid";
+
+@import "components/c-about";
+@import "components/c-banner";
+@import "components/c-cta";
+@import "components/c-cat";
+@import "components/c-expo";
+@import "components/c-footer";
+@import "components/c-form";
+@import "components/c-gallery";
+@import "components/c-header";
+@import "components/c-headerNav";
+@import "components/c-info";
+@import "components/c-insta";
+@import "components/c-logo";
+@import "components/c-partner";
+@import "components/c-project";
+@import "components/c-spiral";
+@import "components/c-subcat";
+
+@import "trumps/hidden";
