@@ -9,9 +9,20 @@ $duration: .6s;
   & ~ .c-cta {
     margin-top: .55em;
   }
-  &__link:before {
-    content: "> ";
-    display: inline;
+  &__link {
+    &:after {
+      content: url('../images/arrow.svg');
+      display: inline-block;
+      width: 23px;
+      height: 25px;
+      vertical-align: middle;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    &:hover:after {
+      margin-left: 8px;
+      margin-right: 0;
+    }
   }
 
   &__button {
